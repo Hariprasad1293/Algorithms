@@ -1,0 +1,275 @@
+1. What Git tree tracks the added changes in the working directory, to store the changes in the next commit?
+A) Staging area
+
+2. You merge your branch into master, but it breaks some application features. How can you quickly find the commits that introduced the bugs?
+A) By using the git bisect command and specifying a good commit and a bad commit to perform a binary search for the faulty commits
+
+3. What is a key advantage of using Git in your project? 
+A) It allows you to save changes made to files while retaining the changes from all previous versions.
+
+4. What command can move your working directory to an earlier commit?
+A) git checkout <commit_hash_here>
+
+5. You are setting up a new project. Which files should you store in the version control system?
+A) The minimum files necessary to rebuild the state of the project at a given point in time
+
+6. Which command renames branch1 to branch2?
+git branch -m branch1 branch2
+
+7. What is the difference between git branch -d and git branch -D? 
+git branch -d will delete a branch, given that it has been properly merged, whereas git branch -D will allow the deletion of the branch irrespective of its merged status.
+
+8. You are working on the main branch in your repository that contains a file called app.js. You create a branch called experiments where you run experimental changes to app.js. After a while, you want to bring the changes made to app.js into your main branch, so you run the following command:
+git switch main
+git restore --source experiments -- app.js
+What would be the outcome?
+
+A) This will check out the latest changes of that file on the experiments branch onto your main branch.
+
+9. When would a Git commit get garbage collected?
+When the commit does not point to any Git tree
+
+10. What would be the output of the following Git command? git blame -L 1,10 README.md 
+It lets you inspect the first 10 lines of the README.md file to see when each line was last modified and who the author of the modifications was. 
+
+11. What is the difference between comparing two branches with git diff or git difftool?
+git diff uses the command-line diff command, while git difftool uses the external diff tool that you configured.
+
+12. Why does Git garbage collect objects?
+To avoid storing unnecessary information or sending it over the network
+
+13. What could happen if you check out the head pointer to a previous commit? 
+HEAD could be in a "detached" state.
+
+14. You are not currently on any branch and you create a commit. What is the outcome?
+The HEAD pointer moves to the new commit.
+
+15. How many commits are created if you merge two branches?
+Zero or one
+
+16. The command git status lists the same file twice, once as "Modified" and once as "Deleted." Which scenario caused this result?
+The file was modified, added to the index, and then deleted.
+
+17. A branch rebase procedure is interrupted because of a conflict in one of the rebased commits. How would you skip that specific commit to continue the rebase? 
+git rebase --skip
+
+18. Which distribution model is most common in small-to-moderate sized open source projects?
+Pull request model
+
+19. After writing the command git checkout {branch-name} numerous times, you want to abbreviate the name of the command. You run the command git config --global alias.co checkout and expect an alias to be set. What happens if you then type git co {branch-name}?
+The checkout command happens as expected; the alias was set successfully.
+
+20. When attempting to verify a signed tag, you receive the following error:
+{gpg: Signature made Fri Feb 23 05:18:05 2018 PDT using DSA key ID E3685R4L
+gpg: Can't check signature: public key not found
+error: could not verify the tag 'v1.0.5'}
+What is the most likely reason for the error?
+
+A) The public key was not stored in the local keyring.
+
+
+1. You are not currently on any branch and you create a commit. What is the outcome?
+The HEAD pointer moves to the new commit.
+
+2. What is rebasing?
+The process of replaying commits from one branch onto another
+
+3. The command git status lists the same file twice, once as "Modified" and once as "Deleted." Which scenario caused this result?
+The file was modified, added to the index, and then deleted.
+
+5. Which command may lead to a detached HEAD situation?
+git checkout
+
+6. You modify a file, stage it, and modify it again. What do you see when you give the command git status?
+You see the file twice, once in the list of staged files and once in the list of modified files.
+
+7. Which term defines the process of moving or combining a sequence of commits to a new base commit?
+Rebasing
+
+8. How does git init turn a directory structure into a Git project?
+It creates a .git subdirectory in the project's root directory.
+
+9. Which would successfully clone the repository into the dev subdirectory?
+git clone <repo url> ./dev
+
+10. What kind of repository does the git init --bare command create?
+A bare repository that lacks a working directory
+
+11. What is the most efficient way to rename file1.txt to file2.txt?
+git mv file1.txt file2.txt
+
+12. What are some disadvantages to using Git with the Secure Shell (SSH) transport protocol?
+It does not allow anonymous access and involves a more complicated setup process for contributors.
+
+13. What does the following information tell you about the pull request from git request-pull?
+User One (2):
+      add new error log
+      change log char limit from 200 to 300
+ src/log.go |   10 ++++++++--
+ 1 files changed, 8 insertions(+), 2 deletions(-)
+
+A) User One made two commits to one file src/log.go and had eight insertions and two deletions.
+
+14. What is a Git Workflow?
+A recipe or recommendation for how to use Git to accomplish work in a consistent and productive manner.
+
+15. Assuming the directory lib exists, what would be outcome if you run the following command? 
+git mv hello.html lib
+
+It will move the file hello.html into the lib sub-directory.
+
+16. What will the following command accomplish?
+git push --force upstream new-feature
+
+This will push the latest commits and overwrite any conflicting commits onto the upstream remote repository.
+
+17. You run a git log command listing a specific author across a date range that extends two weeks. No results are returned and you did not receive an error. What is the most likely explanation?
+
+The developer did not commit any work for that two-week period.
+
+18. You would like to sign all your commits by default in all the repositories present in your local machine. You run the following command:
+git config commit.gpgsign true 
+In your next project, you notice that your commits are not signed by default. Why?
+
+The config command was not executed with the --global flag.
+
+19. What would you do to compare the current branch with the branch mybranch?
+git diff mybranch
+
+20. What is a hook?
+A script that runs when certain important actions occur in a Git repository
+
+1. What is the purpose of the --edit flag in the git revert command?
+To edit the commit message prior to committing the revert
+
+2. Which term defines the process of moving or combining a sequence of commits to a new base commit?
+Rebasing
+
+3. To get a list of the existing branches in your repository, you run the command git branch -a. The output shows the following:
+git branch -a
+
+local-branch
+edit-posts
+comments
+mybranch
+master
+You run the command git branch mybranch but it results in an error. Why? 
+
+A) A branch named mybranch already exists.
+
+4. What is the difference between fetching and pushing?
+Fetching allows you to import commits from a remote repository and pushing allows you to export commits to a remote repository.
+
+5. Which command adds a file to the index?
+git add
+
+6. Why should you never force push to a branch that you share with other developers?
+You may overwrite changes another developer already pushed and your work can diverge.
+
+7. A rebase interrupts due to a conflict. How would you terminate the rebase?
+git rebase --abort
+
+
+8. Which command(s) configures your username and password after you install Git?
+git config
+
+9. Which command would you use to move to an existing branch named "mybranch"?
+git checkout mybranch
+
+10. From your local repository, how would you compel the remote repository to accept your latest changes regardless of conflicts?
+git push --force origin master
+
+11. What is the purpose of the git cherry-pick command?
+To enable arbitrary Git commits to be picked by reference and be appended to the current working HEAD.
+
+12. What happens if you get a conflict during a merge?
+You have an opportunity to fix the conflict and complete the merge.
+
+13. What occurs if you give the command git commit from a directory that does not belong to a Git project?
+
+Git exits with a "Not a git repository" error.
+
+14. What can HEAD point to?
+A commit or a branch 
+
+15. Which error is triggered when Git detects that a file has been edited on the same line during the merge or the rebase of two different branches?
+A conflict
+
+16. Which command provides a list of recent commits?
+git log
+
+17. Which command would you use to create a Git repository?
+git init
+
+18. You want to identify all the places where "hello" and "Hello" are used within your project with git grep hello. Some results return, but you know there are more. Why did all the results not appear?
+You did not add the --ignore-case flag to the command so the search was case sensitive.
+
+19. Which command allows you to compare the latest changes between the master and feature branches for file1.txt?
+git diff master feature ./file1.txt
+
+20. Which would you use when you want to save work for later without committing it to your history?
+git stash
+
+21. Which statement is the best comparison between git log and git blame?
+git blame shows only the latest change in the file, whereas git log can show the entire branch history.
+
+
+1. What is the purpose of the --edit flag in the git revert command?
+
+To edit the commit message prior to committing the revert
+
+3. You create a new file in your project's root. How does git status categorize it?
+"Untracked"
+
+4. Which command narrows the search to locate which commit introduced a bug?
+git bisect
+
+5. Why does Git garbage collect objects?
+To avoid storing unnecessary information or sending it over the network
+
+6. In your company lexicon, the principal branch used in version control systems has always been called principal. After the recent adoption of Git, however, the principal branch in Git is called main instead. How would you ensure that your company implementation of Git complies with its legacy terms? 
+
+Rename the main branch principal.
+
+8. What command would you use to remove file2.txt from the working tree as well as the index and then stage the deletion to the index?
+git rm file2.txt
+
+9. What is the difference between git branch -m and git branch -M?
+git branch -m will rename a branch and the corresponding reflog, whereas git branch -M will force the renaming of the branch, even if a branch with the new name already exists.
+
+10. You are working on an application used by your company for internal communications and knowledge management. Your application's current version is v1.3, and your team then pushes their latest changes into the master branch for the new release. How can you label the new release of the project according to the version sequence used in the project and following Git's best practices?
+
+git tag -a v1.4
+
+11. Which statement best describes git reset's hard and mixed flags?
+hard will reset all changes in the staging area and working directory. mixed will only reset the staging area.
+
+12. How does rebasing affect the history of a repository?
+Rebasing can modify, delete, or even create a new history.
+
+13. What does rerere mean?
+Reuse recorded resolution
+
+14. How can you move to another branch while discarding all uncommitted changes?
+Use git checkout --force.
+
+15. You merge your branch into master, but it breaks some application features. How can you quickly find the commits that introduced the bugs?
+By using the git bisect command and specifying a good commit and a bad commit to perform a binary search for the faulty commits
+
+16. You want to move back to the next-to-last commit. Which command would you use?
+git checkout HEAD~1
+
+17. When performing a revert on a single commit you encounter the following error:
+Error: your local changes would be overwritten by revert. 
+Which command would allow you to proceed with the revert process after committing your local changes? 
+
+A) git revert --continue
+
+18. You created a new local repository for your project using git init and then you immediately create a new branch foo with git checkout -b foo. After committing your changes to foo, you switch back to the main branch but Git gives you an error. Why?
+A) A main branch has not been created because nothing has been committed to it yet.
+
+19. How do you benefit from using git add -i instead of git add .?
+A) You can select specific files and easily update, patch, or revert them.
+
+20. The command git status lists the same file twice, once as "Modified" and once as "Deleted." Which scenario caused this result?
+The file was modified, added to the index, and then deleted.
